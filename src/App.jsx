@@ -10,7 +10,17 @@ function App() {
             <div>
                 {/*step2: display state*/}
                 <h1>Counter: {count}</h1>
-                <button onClick={() => setCount(count + 1)}>Increase</button>
+                {/* <button onClick={() => setCount(count + 1)}>Increase</button>
+                <button onClick={() => setCount(count - 1)}>Decrease</button> */}
+                {/* Increase Button */}
+                <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+                    Increase
+                </button>
+
+                {/* Decrease Button */}
+                <button onClick={() => setCount((prevCount) => prevCount - 1)}>
+                    Decrease
+                </button>
             </div>
         </>
     );

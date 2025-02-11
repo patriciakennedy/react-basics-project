@@ -2,6 +2,10 @@ import Greeting from './Greeting';
 import { useState } from 'react';
 
 function App() {
+    const handleClick = () => {
+        alert('Button Clicked!');
+    };
+
     // step1: define the state
     const [count, setCount] = useState(0);
 
@@ -55,6 +59,18 @@ function App() {
                     onClick={() => setCount(0)}
                 >
                     Reset
+                </button>
+
+                {/* Click Event Button */}
+                <button
+                    style={{
+                        ...buttonStyle,
+                        backgroundColor: 'blue',
+                        color: 'white',
+                    }}
+                    onClick={() => alert('Button Clicked!')}
+                >
+                    Click Me
                 </button>
             </div>
         </>

@@ -13,8 +13,9 @@ function App() {
         borderRadius: '5px',
     };
 
-    // 🛠 Step 1: Define the event handler function (before return)
-    function handleClick(message) {
+    // 🛠 Corrected event handler function
+    function handleClick(event, message) {
+        console.log(event); // ✅ Logs event object
         alert(message);
     }
 
@@ -23,6 +24,7 @@ function App() {
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
                 <h1>Counter: {count}</h1>
 
+                {/* Increase Button */}
                 <button
                     style={{
                         ...buttonStyle,
@@ -34,6 +36,7 @@ function App() {
                     Increase
                 </button>
 
+                {/* Decrease Button */}
                 <button
                     style={{
                         ...buttonStyle,
@@ -45,6 +48,7 @@ function App() {
                     Decrease
                 </button>
 
+                {/* Reset Button */}
                 <button
                     style={{
                         ...buttonStyle,
@@ -56,14 +60,14 @@ function App() {
                     Reset
                 </button>
 
-                {/* 🛠 Step 2: Button with event handler passing an argument */}
+                {/* 🛠 Button with event handler passing an argument */}
                 <button
                     style={{
                         ...buttonStyle,
                         backgroundColor: 'blue',
                         color: 'white',
                     }}
-                    onClick={() => handleClick('Hello from React!')}
+                    onClick={(event) => handleClick(event, 'Hello from React!')}
                 >
                     Click Me
                 </button>

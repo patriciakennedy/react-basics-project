@@ -21,6 +21,8 @@ function App() {
                 <button onClick={() => setCount((prevCount) => prevCount - 1)}>
                     Decrease
                 </button>
+                {/* Reset Button */}
+                <button onClick={() => setCount(0)}>Reset</button>
             </div>
         </>
     );

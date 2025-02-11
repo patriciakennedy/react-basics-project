@@ -5,24 +5,57 @@ function App() {
     // step1: define the state
     const [count, setCount] = useState(0);
 
+    // Define button styles
+    const buttonStyle = {
+        padding: '10px 20px',
+        margin: '5px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        border: 'none',
+        borderRadius: '5px',
+    };
+
     return (
         <>
-            <div>
+            <div style={{ textAlign: 'center', marginTop: '50px' }}>
                 {/*step2: display state*/}
                 <h1>Counter: {count}</h1>
-                {/* <button onClick={() => setCount(count + 1)}>Increase</button>
-                <button onClick={() => setCount(count - 1)}>Decrease</button> */}
+
                 {/* Increase Button */}
-                <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+                <button
+                    style={{
+                        ...buttonStyle,
+                        backgroundColor: 'green',
+                        color: 'white',
+                    }}
+                    onClick={() => setCount((prevCount) => prevCount + 1)}
+                >
                     Increase
                 </button>
 
                 {/* Decrease Button */}
-                <button onClick={() => setCount((prevCount) => prevCount - 1)}>
+                <button
+                    style={{
+                        ...buttonStyle,
+                        backgroundColor: 'red',
+                        color: 'white',
+                    }}
+                    onClick={() => setCount((prevCount) => prevCount - 1)}
+                >
                     Decrease
                 </button>
+
                 {/* Reset Button */}
-                <button onClick={() => setCount(0)}>Reset</button>
+                <button
+                    style={{
+                        ...buttonStyle,
+                        backgroundColor: 'gray',
+                        color: 'white',
+                    }}
+                    onClick={() => setCount(0)}
+                >
+                    Reset
+                </button>
             </div>
         </>
     );
